@@ -3,7 +3,7 @@ import { sentrySvelteKit } from '@sentry/sveltekit';
 import type { UserConfigExport } from 'vite';
 
 const config: UserConfigExport = {
-	plugins: [sentrySvelteKit(), sveltekit()],
+	plugins: [sentrySvelteKit({autoUploadSourceMaps: false}), sveltekit()],
 
 	css: {
 		preprocessorOptions: {

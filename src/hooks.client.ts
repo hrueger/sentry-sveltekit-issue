@@ -1,9 +1,10 @@
 import { dev } from "$app/environment";
 import * as Sentry from '@sentry/sveltekit';
+import { PUBLIC_SENTRY_DSN } from "$env/static/public";
 
 if (!dev) {
     Sentry.init({
-        dsn: '__DSN__',
+        dsn: PUBLIC_SENTRY_DSN,
         tracesSampleRate: 1.0,
     });
 }
